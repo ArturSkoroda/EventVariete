@@ -12,7 +12,7 @@ public class Greetings {
 
  @GetMapping(path = "/")
     public String HelloMessage() {
-        this.text = "Hello from first App";
+        this.text = "Hello from first AAAAAAAAAAAAApp";
         System.out.println(text);
         return text;
     }
