@@ -10,4 +10,5 @@ public class Javawwa30FinalProjectApplication {
 		SpringApplication.run(Javawwa30FinalProjectApplication.class, args);
 	}
 
+
 }
