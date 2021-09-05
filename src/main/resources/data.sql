@@ -1,1 +1,3 @@
-INSERT INTO Event('Kurs SDA', );
+INSERT INTO Event(ID,name,description, city,start_Event, end_Event) VALUES (0, 'kurs sda', 'kurs programowani','Warszawa','1630834046','1630855646');
+--INSERT INTO EventRepozytory('Event') VALUES (0, 'kurs Angulara', 'kurs programowani','Warszawa',2021-09-13-12-00,2021-09-12-18-00);
+--INSERT INTO EventRepozytory('Event') VALUES (0, 'kurs Springa', 'kurs programowani','Warszawa',2021-09-11-12-00,2021-09-12-18-00);
