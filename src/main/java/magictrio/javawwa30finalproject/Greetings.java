@@ -1,32 +1,49 @@
 package magictrio.javawwa30finalproject;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class    Greetings {
+    public String text;
+    @Autowired
+    EventReposytory eventReposytory;
 
-    public String text ;
-@Autowired
-EventReposytory eventReposytory;
 
-
- @GetMapping(path = "/")
+    @GetMapping(path = "/")
     public String HelloMessage() {
         this.text = "Hello from first BBBBBBApp";
-        System.out.println(eventReposytory.findAll());
-        return text;
-    }
-    @GetMapping(path = "/events")
-    public String EventLisst(){
-              return String.valueOf(eventReposytory.findAll());
-    }
-    @GetMapping(path = "/eventsByStartDate")/*trzeba zamienić sortowanie na po dacie startu Eventu*/
-    public String EventLisstSortedByStartDate(){
-        return String.valueOf(eventReposytory.findAll());
+               return text;
     }
 
+    @GetMapping(path = "/events")
+    public List<Event> EventLisst() {
+        return eventReposytory.findAll();
+    }
+
+    @GetMapping(path = "/eventsByStartDate")
+    public List<Event> EventLisstSortedByStartDate() {
+        return eventReposytory.findAllByOrderByStartEventAsc();
+    }
+
+    @GetMapping(path = "/eventsAds")
     /*dodawanie i zapisywanie do listy Eventów nowych wydarzeń*/
-    public  void addEvents(Event event) {this.eventReposytory.save(event);}
+    public void addEvents(Event event) {
+        this.eventReposytory.save(event);
+    }
+
+    @PostMapping("/eventsAds")
+       public void createEvent(@RequestBody Event event) {
+              eventReposytory.save(event);
+
+
+    }
+
 }
