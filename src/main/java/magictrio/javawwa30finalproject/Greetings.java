@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Greetings {
+public class    Greetings {
 
     public String text ;
 
  @GetMapping(path = "/")
     public String HelloMessage() {
-        this.text = "Hello from first AAAAAAAAAAAAApp";
+        this.text = "Hello from first BBBBBBApp";
         System.out.println(text);
         return text;
     }
