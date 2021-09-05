@@ -7,6 +7,8 @@ import java.awt.*;
 import java.util.ArrayList;
 
 @Repository
-public interface EventRepozytory extends JpaRepository <Event, Long> {
+
+public interface EventReposytory extends JpaRepository <Event, Long> {
+
 
 }
